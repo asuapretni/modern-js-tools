@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Lodash Demo random</title>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script>
+  </head>
+  <body>
+  </body>
+
+  <script>
+    // random
+    const randNumber = () => {
+        return _.random(1, 100);
+    }
+    const lodashSampleNumbers = _.times(5, randNumber);
+
+    console.log(lodashSampleNumbers);
+    
+
+  </script>
+</html>

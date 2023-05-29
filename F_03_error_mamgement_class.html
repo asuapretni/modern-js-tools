@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Management in JS</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // when a regular function is executed with new it creates an empty object and assigns it to 'this'
+    class DevcampError extends Error {
+        constructor(msg = 'An error accurred', ...params) {  // but when a derived constructor runs doesn't do this
+            super(...params);  // super called here because otherwise the object for this won't be created...
+
+            this.msg = msg;    
+        }
+    }
+
+
+    function siteComponent(func) {
+        return func();
+    }
+
+    widget = () => {
+        return '<div>Hi There</div>';
+    }
+
+    try {
+        console.log(siteComponent('oops'));
+    } catch(e) {
+        throw new DevcampError('DevcampError', e);
+    }
+
+
+
+
+
+    
+</script>
+</html>
